@@ -234,14 +234,8 @@ function check_nan(event)
        try
        {
           String s=request.getParameter("msg");
-          if(s.equals("You are Registered!!!"))
-          {
-        	  out.println("<font color=red>You are Registered!!!</font>");
-          }
-          else if(s.equals("You are NOT Registered!!!"))
-          {
-        	  out.println("<font color=red>You are <b>NOT</b> Registered!!!</font>");         	  
-          }
+          if(s!=null && !s.equals("Invalid Username/Password!!!"))
+          	out.println("<font color=red>"+s+"</font>");
        }
        catch(Exception e)
        {}

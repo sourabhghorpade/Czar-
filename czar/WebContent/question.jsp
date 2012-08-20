@@ -122,6 +122,7 @@ background-color:red;
 <body onload="start()">
 <jsp:useBean id="user" class="beans.User" scope="session">
 </jsp:useBean>
+
 <jsp:useBean id="ques" class="beans.Question" scope="session">
 </jsp:useBean>
 <div id="bodycontent">

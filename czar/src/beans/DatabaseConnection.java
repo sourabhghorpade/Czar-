@@ -25,8 +25,9 @@ public class DatabaseConnection
 			{
 				if (!connection.isClosed())
 					{
-						statement.executeUpdate(Query);
-					} else
+						statement.execute(Query);
+					} 
+				else
 					throw new SQLException("Connection is not Open");
 
 			}

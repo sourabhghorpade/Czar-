@@ -10,8 +10,6 @@
 <body onload="start()">
 <jsp:useBean id="user" class="beans.User" scope="session">
 </jsp:useBean>
-<jsp:useBean id="ques" class="beans.Question" scope="session">
-</jsp:useBean>
 
 <div id="bodycontent">
 
@@ -28,6 +26,8 @@
  Welcome <%=user.getName()%><br>
 </font></center>
  <%
+ Question ques=new Question("C_TEST");
+ session.setAttribute("ques", ques);  
  ques.setFlag(1);
  %>
  <b style="margin-left:40px;">RULES</b>
@@ -36,18 +36,13 @@
 	<li>Maximum time Limit is <%=user.gettime()%> (min:sec)
 	<li>There is no limit on maximum limit of Questions
 	<li>Every question has 4 options out of which only one is correct
-	<li>There are 3 Difficulty Levels. The Marking Scheme for each are as Follows
 	<ul>
-		<li>Level 1 : For Correct answer +2 and -1 for incorrect answer
-		<li>Level 2 : For Correct answer +3 and -2 for incorrect Answer
-		<li>Level 3 : For Correct answer +5 and -3 for incorrect answer
+		<li>For Correct answer +2 and -1 for incorrect answer
 	</ul>
-	<li>You Automatically advance to the next Level when you answer any 2 questions in the same level correctly
-	<li>You drop a Level after an incorrect answer
 	<li>Click Submit button to submit your answer
-	<li>Click on the options to select your option. The option will be highlighted on selection
+	<li>Click on the options to select your option. 
 	<li>You can Finish the test at any given time by clicking the Finish button in the right corner 
-	<li>Please call any volunteer in case of any problem
+	<li>Please call any volunteer in case of any problem.
 	<li>The Decision of the Jury shall be final and binding on all the participants
 </ul>
 <form action="question.jsp" method=get>

@@ -7,14 +7,14 @@ import java.util.Random;
 
 public class Question
 	{
-		private static final int INITIAL_CAPACITY = 100;
+		private static final int INITIAL_CAPACITY = 1;
 		int number, flag;
 		boolean prev_ques;
 		private String question, o1, o2, o3, o4, answer, user_ans;
 		private int ques_level;
 		private HashMap<Integer, Integer> previouslyGeneratedQuestionNumbers;
 		private int min = 1;
-		private int limit;
+		private int totlaLimit;
 
 		private Test test;
 
@@ -39,17 +39,6 @@ public class Question
 				databaseConnection.disconnect();
 				test = new Test(listOfAvailableTables);
 			}
-
-		public Question() throws ClassNotFoundException, SQLException
-			{
-				ques_level = min;
-				prev_ques = false;
-				previouslyGeneratedQuestionNumbers = new HashMap<Integer, Integer>(
-						INITIAL_CAPACITY);
-				setTest("SE_AUGUST_C");
-				limit = test.getTotalLimit();
-			}
-
 		public Question(String testName) throws ClassNotFoundException, SQLException
 			{
 				ques_level = min;
@@ -57,7 +46,7 @@ public class Question
 				previouslyGeneratedQuestionNumbers = new HashMap<Integer, Integer>(
 						INITIAL_CAPACITY);
 				setTest(testName);
-				limit = test.getTotalLimit();
+				totlaLimit = test.getTotalLimit();
 			}
 
 		public String getUser_ans()
@@ -70,8 +59,8 @@ public class Question
 				ques_level = 1;
 				Random random = new Random();
 				// Generate Question Number within limits
-				for (number = random.nextInt(limit); !insert(number); number = random
-						.nextInt(limit))
+				for (number = random.nextInt(totlaLimit); !insert(number); number = random
+						.nextInt(totlaLimit))
 					;
 				try
 					{
