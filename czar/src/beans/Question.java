@@ -90,6 +90,8 @@ public class Question
 
 		public boolean insert(int key)
 			{
+                if(key ==0)
+                    return false;
 				try
 					{
 						if (!previouslyGeneratedQuestionNumbers.containsKey(new Integer(
