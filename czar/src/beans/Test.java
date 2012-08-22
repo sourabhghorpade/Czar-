@@ -50,9 +50,18 @@ public class Test
 										+ availableTables[counter] + " where Number="
 										+ questionNumber);
 								this.currentQuestionNumber = questionNumber;
-								resultSet.next();
-								question.setQuestion(resultSet
-										.getString("Question"));
+								try
+									{
+										resultSet.next();
+										question.setQuestion(resultSet
+												.getString("Question"));
+									}
+								catch(SQLException exception)
+									{
+										System.out.println(questionNumber);
+										databaseConnection.disconnect();
+										throw exception;
+									}
 								question.setAnswer(resultSet
 										.getString("Answer"));
 								question.setO1( resultSet

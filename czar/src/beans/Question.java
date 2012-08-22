@@ -7,7 +7,7 @@ import java.util.Random;
 
 public class Question
 	{
-		private static final int INITIAL_CAPACITY = 1;
+		private static final int INITIAL_CAPACITY = 30;
 		int number, flag;
 		boolean prev_ques;
 		private String question, o1, o2, o3, o4, answer, user_ans;
@@ -15,7 +15,7 @@ public class Question
 		private HashMap<Integer, Integer> previouslyGeneratedQuestionNumbers;
 		private int min = 1;
 		private int totlaLimit;
-
+		private String testName;
 		private Test test;
 
 		public void setTest(String testName) throws ClassNotFoundException, SQLException
@@ -46,6 +46,7 @@ public class Question
 				previouslyGeneratedQuestionNumbers = new HashMap<Integer, Integer>(
 						INITIAL_CAPACITY);
 				setTest(testName);
+				this.testName=testName;
 				totlaLimit = test.getTotalLimit();
 			}
 
@@ -73,6 +74,11 @@ public class Question
 					}
 				return true;
 			}
+		public String getTestName()
+			{
+				return testName;
+			}
+
 
 		public void setUser_ans(String user_ans)
 			{

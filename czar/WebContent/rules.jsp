@@ -27,7 +27,7 @@
  Welcome <%=user.getName()%><br>
 </font></center>
  <%
- Question ques=new Question("C_TEST");
+ Question ques=new Question("TEST");
  session.setAttribute("ques", ques);  
  ques.setFlag(1);
  %>
@@ -38,11 +38,11 @@
 	<li>There is no limit on maximum limit of Questions
 	<li>Every question has 4 options out of which only one is correct
 	<ul>
-		<li>For Correct answer +2 and -1 for incorrect answer
+		<li>For Correct answer +2 points and -1 for incorrect answer
 	</ul>
 	<li>Click Submit button to submit your answer
 	<li>Click on the options to select your option. 
-	<li>You can Finish the test at any given time by clicking the Finish button in the right corner 
+	<li>You can Finish the test at any given time by clicking the Finish button in the top right corner 
 	<li>Please call any volunteer in case of any problem.
 	<li>The Decision of the Jury shall be final and binding on all the participants
 </ul>
