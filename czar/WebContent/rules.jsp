@@ -27,7 +27,7 @@
  Welcome <%=user.getName()%><br>
 </font></center>
  <%
- Question ques=new Question("TEST");
+ Question ques=new Question("SE_AUGUST");
  session.setAttribute("ques", ques);  
  ques.setFlag(1);
  %>

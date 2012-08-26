@@ -216,8 +216,8 @@ function check_nan(event)
 		 Year : </td><td>
 		<select id="year" class="reqd" name="radio_year" disabled="disabled">
 		  	<option value="FE" >First Year</option>
-			<option value="SE" >Second Year</option>
-			<option value="TE" selected="selected">Third Year</option>
+			<option value="SE" selected="selected">Second Year</option>
+			<option value="TE" >Third Year</option>
 			<option value="BE">Final Year</option>
 		</select>  
 	    </td></tr>		 

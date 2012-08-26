@@ -228,7 +228,7 @@ function timer()
 
 <div id="q_box" >
 <div style="width:150px;height:30px;position:relative;left:50%;margin-left:-75px;margin-top:30px;text-align:center;">Question (<%out.print(ques.getTable());%>)</div>
-<div style="position:relative;width:800px;left:50%;margin-left:-400px;"><pre><%=ques.getQuestion() %></pre></div>
+<div style="position:relative;width:800px;left:50%;margin-left:-400px;overflow:scroll;"><pre><%=ques.getQuestion() %></pre></div>
 </div>
 
 <div id="a_box">

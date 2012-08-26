@@ -1,0 +1,30 @@
+cpp2 43
+c2 13
+c1 81
+c1 91
+c1 16
+c1 15
+c1 58
+c1 92
+c2 53
+cezsy 38
+c1 102
+ceasy 38
+c1 21
+c1 92
+c1 112
+ds43
+ds 46
+ds 21
+c2 21
+cpp1 14  options wrong
+cpp2 44 (display)
+cpp2 66 (display)
+cpp 232
+cpp1 54 (a & d options are the same)
+Data_Structures 21 (2 long )
+Data_Structures 24
+Data_Structures 33
+cpp2 13
+cpp1 24		...incomplete
+cpp2 11

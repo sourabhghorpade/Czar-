@@ -8,6 +8,7 @@ import java.util.Random;
 public class Question
 	{
 		private static final int INITIAL_CAPACITY = 30;
+		private static final int NUMBER_OF_SYMBOLS = 4;
 		int number, flag;
 		boolean prev_ques;
 		private String question, o1, o2, o3, o4, answer, user_ans;
@@ -114,7 +115,27 @@ public class Question
 					}
 				return false;
 			}
-
+		String convertToHTMLSymbols(String string,String characterToBeReplaced,String characterToBeReplaceBy)
+		    {
+		        String startString,tempString;
+		        while(string.contains(characterToBeReplaced))
+		        {
+		            startString=string.substring(0, string.indexOf(characterToBeReplaced));
+		            tempString=string.substring(string.indexOf(characterToBeReplaced)+1,string.length());
+		            string = startString + characterToBeReplaceBy + tempString;
+		        }
+		        return string;
+		    }
+		 String convertToHTML(String string)
+		    {
+		        String Symbol[]={"<",">","'","\""};
+		        String HTMLSymbol[]={"&lt","&gt","&lsquo","&quot"};
+		        for(int i=0;i< NUMBER_OF_SYMBOLS;i++)
+		        {
+		            string = convertToHTMLSymbols(string,Symbol[i],HTMLSymbol[i]);
+		        }
+		        return string;
+		    }
 		public void setNumber(int number)
 			{
 				this.number = number;
@@ -135,9 +156,11 @@ public class Question
 				return question;
 			}
 
+		
 		public void setQuestion(String question)
 			{
-				this.question = question;
+				//this.question=question;
+				this.question = convertToHTML(question);
 			}
 
 		public String getO1()
